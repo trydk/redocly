@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  redocly:
+    container_name: redocly
+    image: redocly/redoc
+    tty: true
+    ports:
+      - 8080:80
+    volumes:
+      - ./swagger/:/usr/share/nginx/html/swagger
+    environment:
+      - SPEC_URL=swagger/swagger.json
+      # - PAGE_TITLE=
+      # - PAGE_FAVICON=favicon.png
+      # - REDOC_OPTIONS=
